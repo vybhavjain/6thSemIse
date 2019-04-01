@@ -31,6 +31,12 @@ void main()
                 }
                 fscanf(f1,"%s",input);
         }
+		//fscanf(f1,"%s",input);
+		fclose(f1);
+		f1=fopen("try1.txt","r");
+		printf("Loading Program %s of length %06X starting at Address %06X :-\n",progname,len,sa);
+		fscanf(f1,"%s",input);
+		
         while(strcmp(input,"E")!=0)
 		{
 			if(strcmp(input,"T")==0)
