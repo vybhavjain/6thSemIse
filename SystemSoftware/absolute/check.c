@@ -87,6 +87,8 @@ void main()
     fprintf(fp2,"%c%c",input[4],input[5]);
     check();
     fscanf(fp1,"%s",input);
+        //printf("%x %x %s",taddr,length,input);
+
    }
   }
   fprintf(fp2,"\n-------------------------------------------------------\n");
