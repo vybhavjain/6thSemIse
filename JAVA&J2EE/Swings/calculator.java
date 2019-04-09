@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;  
 public class t2 implements ActionListener{  
     JTextField tf1,tf2,tf3;  
-    JButton b1,b2,b3;  
+    JButton b1,b2,b3,b4;  
     t2(){  
         JFrame f= new JFrame();  
         tf1=new JTextField();  
@@ -18,12 +18,15 @@ public class t2 implements ActionListener{
         b2=new JButton("-");  
         b2.setBounds(120,200,50,50);  
         b3=new JButton("*");  
-        b3.setBounds(190,200,50,50);  
+        b3.setBounds(190,200,50,50);
+        b4=new JButton("/");  
+        b4.setBounds(260,200,50,50);
         b1.addActionListener(this);  
         b2.addActionListener(this);  
-        b3.addActionListener(this);  
+        b3.addActionListener(this);
+        b4.addActionListener(this);
         f.add(tf1);f.add(tf2);f.add(tf3);f.add(b1);f.add(b2);  
-        f.add(b3);
+        f.add(b3);f.add(b4);
         f.setSize(300,300);  
         f.setLayout(null);  
         f.setVisible(true);  
@@ -41,6 +44,10 @@ public class t2 implements ActionListener{
         }
         else if(e.getSource()==b3){  
             c=a*b;  
+        }
+        else
+        {
+            c= a//b;
         }
         String result=String.valueOf(c);  
         tf3.setText(result);  
