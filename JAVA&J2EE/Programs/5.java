@@ -27,10 +27,9 @@ public class progressbar extends JFrame implements Runnable,ActionListener {
 	JButton copyButton,stopButton;
 	BufferedInputStream inBuffer;
 	BufferedOutputStream outBuffer;
-	public progressbar(String title) {
-		// TODO Auto-generated constructor stub
-		super(title);
-		setLayout(new GridLayout(0, 1));
+	public progressbar() {
+		setLayout(new GridLayout(0,1));
+		
 		jp=new JPanel();
 		add(jp);
 		jpb=new JProgressBar(0, 100);
@@ -52,7 +51,6 @@ public class progressbar extends JFrame implements Runnable,ActionListener {
 		add(toLabel);add(toName);
 		add(copyButton);add(stopButton);
 		
-		
 	}
 	
 	@Override
@@ -73,17 +71,13 @@ public class progressbar extends JFrame implements Runnable,ActionListener {
 					System.out.println(content.nextLine());
 				}
 			}catch (IOException except) {
-				// TODO: handle exception
 				except.printStackTrace();
 			}
-			
-			
 		}
 	}
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
 		String inFile=fromName.getText();
 		String outFile=toName.getText();
 		
@@ -105,11 +99,8 @@ public class progressbar extends JFrame implements Runnable,ActionListener {
 			
 			inBuffer.close();
 			outBuffer.close();
-			
-			
-			
+					
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -117,7 +108,7 @@ public class progressbar extends JFrame implements Runnable,ActionListener {
 
 	public static void main(String[] args) {
 		
-		progressbar fp=new progressbar("Copy Progress");
+		progressbar fp=new progressbar();
 		fp.setSize(200, 200);
 		fp.setVisible(true);
 	}
