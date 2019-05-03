@@ -1,22 +1,16 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-
+import java.io.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/CalculateTax")
 public class CalculateTax extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     public CalculateTax() {
-        // TODO Auto-generated constructor stub
     }
-
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -45,10 +39,8 @@ public class CalculateTax extends HttpServlet {
 
 		pw.close();
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-
 }
