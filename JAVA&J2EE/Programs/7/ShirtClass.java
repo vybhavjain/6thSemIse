@@ -33,7 +33,7 @@ public class ShirtClass extends HttpServlet {
 		try{
 			System.out.println(i+"printed");
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/s", "root", "mysql");
+			Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/data", "root", "msrit");
 			Statement stmt=conn.createStatement();
 			
 			stmt.executeUpdate("insert into TShirts values ("+i+",'"+accList.substring(0,10)+"','"+tagline+"','"+pocket+"','"+color+"');");
