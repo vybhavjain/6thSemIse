@@ -24,4 +24,3 @@ pout.print(tax);
 %>
 </body>
 </html>
-© 2019 GitHub, Inc.
