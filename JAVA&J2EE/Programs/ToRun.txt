@@ -1,5 +1,7 @@
 For programs: 3,6,7,8,10,11 : perform the following steps:
 
+Should be created under Dynamic Web Project
+
 In java Build path, Add the following 
 Under opt/tomcat/lib
   1)tomcat-api.jar
