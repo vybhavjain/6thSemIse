@@ -11,13 +11,13 @@
 <body>
 	<%
 		HashMap<String, String> hm = new HashMap<String, String>();
-		hm.put("A", "A");
-		hm.put("B", "B");
+		hm.put("name1", "pass1");
+		hm.put("name2", "pass2");
 		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
 		PrintWriter pout = response.getWriter();
 		if (hm.containsKey(name) && pass.equals(hm.get(name))) {
-			pout.println("Welcome " + name);
+			pout.println("Welcome " + name + "\n");
 			pout.println(new Date());
 	%>
 	<form action="CalculateTax.jsp" method="get">
@@ -29,8 +29,8 @@
 			<option>Male</option>
 			<option>Female</option>
 		</select>
-		Income: <input type="text" name="salary">
-		<input type="submit">
+		AnnualIncome: <input type="text" name="salary">
+		CalculateTax<input type="submit">
 
 	</form>
 	<%
