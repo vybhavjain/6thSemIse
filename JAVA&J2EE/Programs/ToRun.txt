@@ -1,0 +1,12 @@
+For programs: 3,6,7,8,10,11 : perform the following steps:
+
+In java Build path, Add the following 
+Under opt/tomcat/lib
+  1)tomcat-api.jar
+  2)servlet-api.jar
+  3)tomcat-api.jar
+Under opt/jar_files 
+  1)mysql-connector.jar
+  2)servlet-api-3.0.0.jar
+  
+JSP programs are run on the tomcat8.5 server under localhost
