@@ -1,0 +1,10 @@
+sudo service mysql start
+
+sudo mysql -u root -p
+
+create database data;
+use data;
+
+create table TShirts( ono integer, acc varchar(50), tag varchar(50), cp varchar(50), col varchar(50));
+
+select * from TShirts;
