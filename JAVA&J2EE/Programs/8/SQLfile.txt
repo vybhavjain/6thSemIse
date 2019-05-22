@@ -1,0 +1,10 @@
+sudo service mysql start
+
+sudo mysql -u root -p
+
+create database telephonedirectory;
+use  telephonedirectory;
+
+create table tele_dir(name varchar(50),phnumber int,address varchar(50),company varchar(50),pin int);
+
+select * from tele_dir;
