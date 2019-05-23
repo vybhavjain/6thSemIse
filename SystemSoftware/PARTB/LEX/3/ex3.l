@@ -40,6 +40,8 @@ char a[20],opt[20][10],opnd[20][10];
 
 [0-9]+|[a-zA-Z][a-zA-Z0-9_]*	{strcpy(opnd[j++],yytext);}
 %%
+int yywrap()
+{return 1;}
 void main()
 {
 	printf("\nEnter an Expression: ");
