@@ -11,4 +11,4 @@ Under opt/jar_files
   1)mysql-connector.jar
   2)servlet-api-3.0.0.jar
   
-JSP programs are run on the tomcat8.5 server under localhost
+JSP programs are run on the tomcat8.5 server
