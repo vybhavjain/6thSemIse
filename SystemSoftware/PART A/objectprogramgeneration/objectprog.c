@@ -8,7 +8,7 @@ char label[20],opcode[20],operand[20];
 int textlen=0,len;
 	char textrec[80],saddress[20],objcode[20],temp[80],startaddr[20];
 	printf("\nObject Program:-\n\n");
-	f4=fopen("outputt.dat","r");
+	f4=fopen("output.txt","r");
 	f5=fopen("length.txt","r");
 	fscanf(f5,"%x",&len);
 	fscanf(f4,"%s %s %s %s %s",saddress,label,opcode,operand,objcode);
