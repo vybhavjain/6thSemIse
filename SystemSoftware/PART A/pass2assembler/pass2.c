@@ -6,7 +6,7 @@ void main()
 {
 	FILE *f1,*f2,*f3,*f4;
 	char label[20],opcode[20],operand[20];
-	int address,sa,len;
+	int address,sa;
 	f1=fopen("output.txt","r");
 	f4=fopen("output2.txt","w");
 	fscanf(f1,"%x %s %s %s",&address,label,opcode,operand);
@@ -83,7 +83,6 @@ void main()
 		{
 			if(operand[0]=='X')
 			{
-				//fprintf(f4,"0000");
 				for(int i=2;i<strlen(operand)-1;i++)
 					fprintf(f4,"%c",operand[i]);
 				fprintf(f4,"\n");
@@ -105,10 +104,7 @@ void main()
 		fscanf(f1,"%x %s %s %s",&address,label,opcode,operand);
 
 	}
-	fprintf(f4,"%X\t%s\t%s\t%s\n",address,label,opcode,operand);
-
-	len=address-sa;
-	
+	fprintf(f4,"%X\t%s\t%s\t%s\n",address,label,opcode,operand);	
 	printf("\nOutput File generated as output.txt\n");	
 
 	fclose(f1);
