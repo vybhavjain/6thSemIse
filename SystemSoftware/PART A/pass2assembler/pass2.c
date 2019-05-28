@@ -1,7 +1,6 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
-
 void main()
 {
 	FILE *f1,*f2,*f3,*f4;
@@ -15,7 +14,6 @@ void main()
 		fprintf(f4,"%X\t%s\t%s\t%s\t-\n",address,label,opcode,operand);
 		sa=address;
 	}
-	
 	fscanf(f1,"%x %s %s %s",&address,label,opcode,operand);
 	while(strcmp(opcode,"END")!=0)
 	{
@@ -97,16 +95,11 @@ void main()
 				fprintf(f4,"\n");
 			}
 		}
-
 		if(strcmp(opcode,"RESB")==0||strcmp(opcode,"RESW")==0)
 			fprintf(f4,"-\n");		
-
 		fscanf(f1,"%x %s %s %s",&address,label,opcode,operand);
-
 	}
 	fprintf(f4,"%X\t%s\t%s\t%s\n",address,label,opcode,operand);	
-	printf("\nOutput File generated as output.txt\n");	
-
 	fclose(f1);
 	fclose(f4);
 }
