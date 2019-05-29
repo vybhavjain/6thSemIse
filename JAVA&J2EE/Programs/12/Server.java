@@ -14,7 +14,7 @@ public class Server {
 	        DataInputStream dis = new DataInputStream(s.getInputStream()); 
 	        String k = dis.readUTF(); 
 	        System.out.println("File Transferred"); 
-	        FileOutputStream fos = new FileOutputStream("/Users/hemantj/eclipse-workspace/Socket/hi.txt"); 
+	        FileOutputStream fos = new FileOutputStream("hi.txt"); 
 	        byte[] b = k.getBytes(); 
 	        fos.write(b);
 	        
