@@ -91,10 +91,8 @@ default: System.exit(0);
 }
 }
 public static void main(String[] args) {
-//1. Enter contact details in the database
 DataBaseCallers.ForHoldingData();
 System.out.println("Receive missed Calls");
-//DataBaseCallers.sc
 HandleMissedCallActivities();
 DataBaseCallers.display();
 }
