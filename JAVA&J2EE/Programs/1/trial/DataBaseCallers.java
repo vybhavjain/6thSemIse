@@ -1,3 +1,5 @@
+package trial;
+
 import java.util.*;
 import java.util.Map.Entry;
 public class DataBaseCallers {
@@ -9,15 +11,12 @@ static void createEnteries(int n)
 	for(int i=0;i<n;i++)
 	{
 		System.out.println("Enter the phone number and Contact name");
-		Long phno = sc.nextLong();
-		String name = sc.next();
-		hm.put(phno, name);
+		hm.put(sc.nextLong(), sc.next());
 	}
 }
 public static void ForHoldingData() {
      System.out.println("Enter how many details do you require?");
-     int n = sc.nextInt();
-     createEnteries(n);
+     createEnteries(sc.nextInt());
 }
 public static void display()
 {

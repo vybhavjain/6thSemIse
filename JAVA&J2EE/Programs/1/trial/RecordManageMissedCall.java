@@ -1,3 +1,5 @@
+package trial;
+
 import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.ListIterator;
@@ -36,8 +38,7 @@ public class RecordManageMissedCall {
 				i++;
 				System.out.println("Number is ");
 				MissedCallDetails m1 = it.next();
-				System.out.println(m1.tel_num);
-				System.out.println("Do you want to delete the details related to this number? Indicate by 1 : delete, 2: move next call , 3: display call details \n");
+				System.out.println(m1.tel_num+"\nDo you want to delete the details related to this number? Indicate by 1 : delete, 2: move next call , 3: display call details \n");
 				int cho = DataBaseCallers.sc.nextInt();
 				if(cho==1)
 				removeList.add(m1);
@@ -50,28 +51,28 @@ amiss.removeAll(removeList);
 break;
 
 case 3: 
-System.out.println("Delete based on the number given by user");
-System.out.println("Enter the number");
+System.out.println("Delete based on the number given by user\nEnter the number");
 Long num = DataBaseCallers.sc.nextLong();
 ListIterator<MissedCallDetails> it1 = amiss.listIterator();
 boolean flag = false;
 i=0;
 while(it1.hasNext())
-{ i++;
-MissedCallDetails m1 = it1.next();
-if(m1.tel_num==num)
-{
-flag =true;
-amiss.remove(m1);
-break;
-}
+{ 
+	i++;
+	MissedCallDetails m1 = it1.next();
+	if(m1.tel_num==num)
+	{
+		flag =true;
+		amiss.remove(m1);
+		break;
+	}
 }
 if(i!=0)
 {
-if(flag==true)
-System.out.println("Phone number with details "+ num +"deleted");
-else
-System.out.println("No such number exists");
+	if(flag)
+	System.out.println("Phone number with details "+ num +"deleted");
+	else
+	System.out.println("No such number exists");
 }
 else
 System.out.println("No missed Call");
@@ -81,19 +82,19 @@ case 4:
 ListIterator<MissedCallDetails> it2 = amiss.listIterator();
 while(it2.hasNext())
 {
-MissedCallDetails m1 = it2.next();
-m1.display();
+	MissedCallDetails m1 = it2.next();
+	m1.display();
 }
 break;
 
-default: System.exit(0); 
-}
-}
-}
+default: 
+System.exit(0); 
+
+}}}
+
 public static void main(String[] args) {
 DataBaseCallers.ForHoldingData();
 System.out.println("Receive missed Calls");
 HandleMissedCallActivities();
 DataBaseCallers.display();
-}
-}
+}}
