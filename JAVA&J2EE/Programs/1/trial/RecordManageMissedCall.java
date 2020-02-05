@@ -12,7 +12,7 @@ public class RecordManageMissedCall {
 		while(true)
 		{
 			System.out.println("Enter a choice");
-			System.out.println("1:Add missed call\n2.Display and delete on request\n3. Delete based on number\n4. Print");
+			System.out.println("1:Add missed call\n2.Display and delete on request\n3.Delete based on number\n4.Print");
 			int choice = DataBaseCallers.sc.nextInt();
 			switch(choice)
 			{
