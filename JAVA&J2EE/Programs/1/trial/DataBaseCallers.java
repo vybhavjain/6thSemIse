@@ -1,6 +1,7 @@
 package trial;
 
 import java.util.*;
+import java.util.Map.*;
 
 public class DataBaseCallers {
 public static HashMap<Long,String> hm;

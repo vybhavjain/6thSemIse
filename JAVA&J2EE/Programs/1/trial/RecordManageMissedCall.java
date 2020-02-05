@@ -9,7 +9,8 @@ public class RecordManageMissedCall {
 		amiss = new LinkedList<MissedCallDetails>();
 		while(true)
 		{
-			System.out.println("Enter a choice\n1:Add missed call\n2.Display and delete on request\n3.Delete based on number\n4.Print");
+			System.out.println("Enter a choice\n");
+			System.out.println("");
 			int choice = DataBaseCallers.sc.nextInt();
 			switch(choice)
 			{
@@ -42,7 +43,8 @@ public class RecordManageMissedCall {
 				else if(cho==3)
 				m1.display();
 				}
-
+if(i==0)
+System.out.println("No missed calls");
 amiss.removeAll(removeList);
 break;
 
