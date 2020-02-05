@@ -1,7 +1,7 @@
 package trial;
 
 import java.util.*;
-import java.util.Map.Entry;
+
 public class DataBaseCallers {
 public static HashMap<Long,String> hm;
 public static Scanner sc = new Scanner(System.in);

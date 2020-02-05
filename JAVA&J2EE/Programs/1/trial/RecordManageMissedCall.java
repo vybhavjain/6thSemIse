@@ -1,8 +1,6 @@
 package trial;
 
-import java.util.Calendar;
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.*;
 
 public class RecordManageMissedCall {
 	static LinkedList<MissedCallDetails> amiss;
@@ -44,8 +42,7 @@ public class RecordManageMissedCall {
 				else if(cho==3)
 				m1.display();
 				}
-if(i==0)
-System.out.println("No missed calls");
+
 amiss.removeAll(removeList);
 break;
 
