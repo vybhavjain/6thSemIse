@@ -4,32 +4,32 @@
 
 void main()
 {
-	FILE *f1,*f2,*f3,*f4;
-	f1=fopen("input.txt","r");
-	f3=fopen("symtab.txt","w");
-	f4=fopen("output.txt","w");
-	int lc,sa;
+	FILE *f1,*f2,*f3,*f4; //4 file pointers
+	f1=fopen("input.txt","r"); //input file having SIC code
+	f3=fopen("symtab.txt","w"); //symbol table
+	f4=fopen("output.txt","w");//output file containing locations
+	int lc,sa;//lc=location,sa=start location
 	char label[20],opcode[20],operand[20];
 	
-	fscanf(f1,"%s %s %s",label,opcode,operand);
+	fscanf(f1,"%s %s %s",label,opcode,operand);//read from file input.txt
 
-	if(strcmp(opcode,"START")==0)
+	if(strcmp(opcode,"START")==0)//if start
 	{
-		sa=strtol(operand,NULL,16);
-		fprintf(f4,"%X\t%s\t%s\t%s\n",sa,label,opcode,operand);
+		sa=strtol(operand,NULL,16);//covert string to hex
+		fprintf(f4,"%X\t%s\t%s\t%s\n",sa,label,opcode,operand);//write into output file 
 	}
 	else
-		sa=0;
+		sa=0;//intially if not mentioned
 	lc=sa;
 
-	fscanf(f1,"%s %s %s",label,opcode,operand);
-	while(strcmp(opcode,"END")!=0)
+	fscanf(f1,"%s %s %s",label,opcode,operand);//read from input
+	while(strcmp(opcode,"END")!=0)//until end instruction
 	{
-		fprintf(f4,"%X\t%s\t%s\t%s\n",lc,label,opcode,operand);
+		fprintf(f4,"%X\t%s\t%s\t%s\n",lc,label,opcode,operand);//write into output file
 		
-		if(strcmp(label,"*")!=0)
+		if(strcmp(label,"*")!=0)//if * means no label, don't write into symtab
 		{
-			fprintf(f3,"%s\t%X\n",label,lc);
+			fprintf(f3,"%s\t%X\n",label,lc);//write into symtab
 		}
 		
 		char tempcode[20],tempval[20];
