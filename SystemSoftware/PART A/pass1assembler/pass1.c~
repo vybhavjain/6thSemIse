@@ -32,48 +32,48 @@ void main()
 			fprintf(f3,"%s\t%X\n",label,lc);//write into symtab
 		}
 		
-		char tempcode[20],tempval[20];//stores contents of optab1; code, code id
+		char tempcode[20],tempval[20];
 		f2=fopen("optab1.txt","r");
 		fscanf(f2,"%s %s",tempcode,tempval);
-		while(!feof(f2))//while not end of file
+		while(!feof(f2))
 		{
-			if(strcmp(opcode,tempcode)==0)//compare the opcode and codes in optab1
+			if(strcmp(opcode,tempcode)==0)
 			{
-				lc+=3;//default increment 3
+				lc+=3;
 				break;
 			}
-			fscanf(f2,"%s %s",tempcode,tempval);//read the next instruction 
+			fscanf(f2,"%s %s",tempcode,tempval);
 		}
-		fclose(f2);//close optab1
+		fclose(f2);
 
-		if(strcmp(opcode,"WORD")==0)//if opcode is WORD
+		if(strcmp(opcode,"WORD")==0)
 		{
-			lc+=3;//add 3
+			lc+=3;
 		}
 
 		if(strcmp(opcode,"RESW")==0)
 		{
-			lc=lc+(3*(strtol(operand,NULL,10)));//convert to decimal , multiple by 3 and add to lc
+			lc=lc+(3*(strtol(operand,NULL,10)));
 		}
 
 		if(strcmp(opcode,"RESB")==0)
 		{
-			lc=lc+strtol(operand,NULL,10);//convert to decimal and add to lc
+			lc=lc+strtol(operand,NULL,10);
 		}
 
-		if(strcmp(opcode,"BYTE")==0)//if opcode is byte
+		if(strcmp(opcode,"BYTE")==0)
 		{
-			if(operand[0]=='X')//if hex 
+			if(operand[0]=='X')
 				lc++;
 			else
-				lc=lc+strlen(operand)-3;//if string of char
+				lc=lc+strlen(operand)-3;
 		}
-		fscanf(f1,"%s %s %s",label,opcode,operand);//default read from input
+		fscanf(f1,"%s %s %s",label,opcode,operand);
 	}
-	fprintf(f4,"%X\t%s\t%s\t%s\n",lc,label,opcode,operand);//write into 
+	fprintf(f4,"%X\t%s\t%s\t%s\n",lc,label,opcode,operand);
 
-	printf("Output File generated as output.txt\n");//generate output 
+	printf("\nOutput File generated as output.txt\n");
 	fclose(f1);
 	fclose(f4);
-	fclose(f3);//close all files
+	fclose(f3);
 }
