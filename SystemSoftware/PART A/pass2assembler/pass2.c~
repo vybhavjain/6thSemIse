@@ -5,7 +5,7 @@ void main()
 {
 	FILE *f1,*f2,*f3,*f4;
 	char label[20],opcode[20],operand[20];
-	int address,sa;
+	int address,sa,i;
 	f1=fopen("output.txt","r");
 	f4=fopen("output2.txt","w");
 	fscanf(f1,"%x %s %s %s",&address,label,opcode,operand);
