@@ -23,10 +23,11 @@ void main()
                 while(i<strlen(input)-1)//from start to end in object codes of text record
                 {
                         printf("%X\t%c%c\n",addr,input[i],input[i+1]);//for every byte, printing the address
-                        addr++;//incrementing address by 1
-                        i+=2;//moving every byte
+                        addr++;//incre
+                        i+=2;
                 }
-                fscanf(f1,"%s",input);//taking next string in object program
+                fscanf(f1,"%s",input);
+puts(input);
         }
-        fclose(f1);//close file 
+        fclose(f1);
 }
