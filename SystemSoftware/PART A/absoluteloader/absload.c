@@ -17,7 +17,6 @@ void main()
                         fscanf(f1,"%X",&addr);//starting addr in hex
                         fscanf(f1,"%X",&len);//length in hex
                         fscanf(f1,"%s",input);//the first instruction
-
                 }
                 int i=0;
                 while(i<strlen(input)-1)//from start to end in object codes of text record

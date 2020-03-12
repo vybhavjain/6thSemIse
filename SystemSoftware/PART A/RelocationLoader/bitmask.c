@@ -3,13 +3,13 @@
 
 char bitmask[20];
 
-void convert(char hex[12])
+void convert(char hex[12])//convert hex code to binary 
 {
-	strcpy(bitmask, "");
+	strcpy(bitmask, "");//copy bitmask 
 	int i;
 	for(i = 0; i < strlen(hex); i++)
 	{
-		switch (hex[i])
+		switch(hex[i])
 		{
 		case '0':
 			strcat(bitmask, "0000");
@@ -65,7 +65,7 @@ void convert(char hex[12])
 
 void main()
 {
-	FILE *f1;
+	FILE *f1;//file pointer for input
 	f1 = fopen("input.txt", "r");
 	char type, objcode[20], progname[20], input[20], mask[20];
 	int psa, sa, addr, len, c = 0;
