@@ -7,7 +7,7 @@
 Use git or download zip.
 
 ```git
-git clone https://github.com/nimishbongale/6thSemIse.git
+git clone <repo link>.git
 ```
 
 ## Contributing
