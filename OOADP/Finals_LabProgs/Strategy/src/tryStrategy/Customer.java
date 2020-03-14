@@ -20,5 +20,4 @@ public abstract class Customer {
 		System.out.println("Amount Payable: "+(amt-d.calcDiscount(amt)));
 		
 	}
-	
 }

@@ -1,7 +1,6 @@
 package tryStrategy;
 
 public class StrategyDemo {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -12,8 +11,6 @@ public class StrategyDemo {
 		c1.printBill(100);
 		
 		c1=new FTCCustomer("ftc1", "raga");
-		c1.printBill(100);
-		
+		c1.printBill(100);	
 	}
-
 }

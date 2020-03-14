@@ -1,3 +1,5 @@
+package tryBridge;
+
 public class Discount1 implements Discount {
 
 	@Override
