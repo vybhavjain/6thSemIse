@@ -1,3 +1,4 @@
+//Author Credits @Mahima-M-A
 public class Patient {
 	int id, age;
 	String name, date, cause, treatment, doctor;
