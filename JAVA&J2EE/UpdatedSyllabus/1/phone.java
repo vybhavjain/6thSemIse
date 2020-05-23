@@ -102,7 +102,7 @@ public class phone
 					{
 						mlist.remove(i);
 						count--;
-						System.out.println("Deleted "+delnum);
+						System.out.println("Deleted "+delNum);
 					}
 				}
 			}
