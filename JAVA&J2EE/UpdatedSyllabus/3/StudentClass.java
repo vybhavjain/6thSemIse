@@ -1,29 +1,27 @@
 import java.awt.*;
 import java.awt.event.*;
-//import java.awt.event.ActionListener;
-import java.util.LinkedList;
+import java.util.*;
 
 import javax.swing.*;
 
 class Student {
-String name,usn,address,category;
-int age;
-//float sgpa1,sgpa2,sgpa3,sgpa4,sgpa5,sgpa6,sgpa7,sgpa8;
-float cgpa;
-public Student(String name,String usn,String address,String cat,int age, float cgpa)
-{
-this.name=name; this.usn=usn;
-this.address=address; this.category=cat;
-this.age=age;
-this.cgpa=cgpa;
-}
-public String toString()
-{
-	String stud= name + " "+usn+" residing in "+address+" belonging to category "+category+" of age "+age;
-	stud+= "has cgpa "+cgpa;
-	return stud;
-}
+	String name,usn,address,category;
+	int age;
+	float cgpa;
+	public Student(String name,String usn,String address,String cat,int age, float cgpa)
+	{
+		this.name=name; this.usn=usn;
+		this.address=address; this.category=cat;
+		this.age=age;
+		this.cgpa=cgpa;
+	}
 
+	public String toString()
+	{
+		String stud= name + " "+usn+" residing in "+address+" belonging to category "+category+" of age "+age;
+		stud+= "has cgpa "+cgpa;
+		return stud;
+	}
 }
 
 public class StudentClass implements ActionListener{
@@ -64,7 +62,6 @@ public class StudentClass implements ActionListener{
 	JFrame f2=new JFrame("Student Collection Display");
 StudentClass()
 {
-	//JFrame f1=new JFrame("Student Information");
 	jl1.setBounds(10,10,10,10);
 	cat.addItem("GM");
 	cat.addItem("SC/ST");
@@ -90,7 +87,6 @@ public void actionPerformed(ActionEvent evt)
 {
 	if(evt.getSource()==submit)
 	{
-		//check for validations
 		try
 		{
 			int v1=Integer.parseInt(age.getText());
@@ -98,14 +94,12 @@ public void actionPerformed(ActionEvent evt)
 			{
 				String age1=JOptionPane.showInputDialog(null,"Enter valid Age");
 				age.setText(age1);
-	
 			}
-			
 		}
 		catch(NumberFormatException e) {
 			JOptionPane.showMessageDialog(f1, "Invalid entry");
 			age.requestFocus();
-					}
+		}
 		
 		checkSGPA_valid(1,sgpa1);
 		checkSGPA_valid(2,sgpa2);
@@ -117,7 +111,6 @@ public void actionPerformed(ActionEvent evt)
 		checkSGPA_valid(8,sgpa8);
 		float cal_cgpa = calculate_cgpa();
 		cgpa.setText(Float.toString(cal_cgpa));
-		
 		}
 	else if(evt.getSource()==done)//to submit into collection
 	{
@@ -125,17 +118,15 @@ public void actionPerformed(ActionEvent evt)
 		stud_list.add(s1);
 	}
 	else {
-		f1.setVisible(false);
-		f2.setVisible(true);
-		f2.setSize(500,500);
-		stud_list_display.setText(" ");
-		for(Student s:stud_list)
-		{
-			stud_list_display.append(s.toString()+ "\n");
-		}
+			f1.setVisible(false);
+			f2.setVisible(true);
+			f2.setSize(500,500);
+			stud_list_display.setText(" ");
+			for(Student s:stud_list)
+				stud_list_display.append(s.toString()+ "\n");
 	}
-	
 }
+
 float calculate_cgpa()
 {
 	float v1 = Float.parseFloat(sgpa1.getText());
@@ -149,26 +140,23 @@ float calculate_cgpa()
 	return (v1+v2+v3+v4+v5+v6+v7+v8)/8;
 }
 	
-
 void checkSGPA_valid(int sem,JTextField sgpa)
 {
 	try {
-		
 	if(Float.parseFloat(sgpa.getText())>10)
-	{
-		String v1 = JOptionPane.showInputDialog(null,"Enter an SGPA less than or equal to 10 for sem "+sem);
-		sgpa.setText(v1);
-	}
+		{
+			String v1 = JOptionPane.showInputDialog(null,"Enter an SGPA less than or equal to 10 for sem "+sem);
+			sgpa.setText(v1);
+		}
 	}
 	catch(NumberFormatException e) {
 		String v2=JOptionPane.showInputDialog(null, "Please enter SGPA for semester "+sem);
 		sgpa.setText(v2);
-		//sgpa.requestFocus();
-		
 	}
 }
+
 public static void main(String args[])
-{
-	StudentClass sc = new StudentClass();
-}
+	{
+		StudentClass sc = new StudentClass();
+	}
 }
