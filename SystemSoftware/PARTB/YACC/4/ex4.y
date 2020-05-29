@@ -19,5 +19,4 @@ main()
 {
 printf("Enter an Expression: ");
 yyparse();
-printf("\nValid Expression\n");
 }
