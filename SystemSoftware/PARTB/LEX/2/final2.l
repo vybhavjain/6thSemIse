@@ -17,9 +17,9 @@ int yywrap(){return 1;
 fclose(yyin);}
 void main()
 {
-  yyin=fopen("input1.txt","r");
+  yyin=fopen("text.txt","r");
   yylex();
   printf("No. of identifiers=%d\n", id);
   printf("No. of comments=%d\n", com);
   printf("No. of operators=%d\n", oper);
-  }
+}

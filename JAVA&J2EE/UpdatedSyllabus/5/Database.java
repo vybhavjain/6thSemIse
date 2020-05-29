@@ -4,15 +4,10 @@ import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
+import javax.swing.*;
 import java.sql.*;
 
 public class Database {
-
   public static void main(String[] args) {
     JFrame f;
     JLabel label1, label2, label3, label4, label5, lb1, lb2, lb3, lb4;
@@ -110,7 +105,7 @@ public class Database {
             Statement stmt = (Statement) conn.createStatement();
             stmt.executeUpdate(
                 "insert into Representative values(" + repno + ",'" + rname + "','" + state + "'," + comrate + ");");
-          }
+            }
         } catch (Exception ex) {
           ex.printStackTrace();
         }
@@ -118,7 +113,6 @@ public class Database {
     });
 
     jb3.addActionListener(new ActionListener() {
-
       @Override
       public void actionPerformed(ActionEvent e) {
         try {
