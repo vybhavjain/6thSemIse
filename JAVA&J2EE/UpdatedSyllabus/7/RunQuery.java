@@ -5,7 +5,7 @@ class RunQuery {
     RunQuery(){
         try{
             Class.forName("com.mysql.jdbc.Driver"); 
-            this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "nikmisha13594");
+            this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
         }
         catch(Exception e){
             e.printStackTrace();
