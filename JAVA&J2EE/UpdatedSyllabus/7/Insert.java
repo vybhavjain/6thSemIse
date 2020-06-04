@@ -17,7 +17,7 @@ public class Insert extends HttpServlet {
         super();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        new RunQuery().update("insert into info values(" + request.getParameter("id") + ",'" + request.getParameter("name") + "'," + request.getParameter("age") + ",'" + request.getParameter("doa") + "','"+ request.getParameter("coa") + "','" + request.getParameter("diag") + "','" + request.getParameter("treat") + "');");
+        new RunQuery().update("insert into info values(" + request.getParameter("id") + ",'" + request.getParameter("name") + "'," + request.getParameter("age") + ",'" + request.getParameter("doa") + "','"+ request.getParameter("coa") + "','" + request.getParameter("doc") + "','" + request.getParameter("diag") + "','" + request.getParameter("treat") + "');");
         response.getWriter().println("Successfully Inserted!");
     }
 }
