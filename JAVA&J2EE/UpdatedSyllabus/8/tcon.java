@@ -29,7 +29,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 		try {
             Statement stmt;
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tshrit", "root", "");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
             if (conn != null) {
             	stmt= conn.createStatement();
             	String qu;
@@ -37,7 +37,7 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
             		for(String option:Accessories){
             			tshirtAccessories=tshirtAccessories+option;
             		}
-            		qu="insert into Tshirts values("+null+",'"+tshirtTagLine+"','"+tshirtAccessories+"','"+tcolor+"','"+tshirtOption+"');";
+            		qu="insert into Tshirts values("+ null +",'"+tshirtTagLine+"','"+tshirtAccessories+"','"+tcolor+"','"+tshirtOption+"');";
             		stmt.executeUpdate(qu);
             	}
             	qu="select * from Tshirts;";
@@ -60,17 +60,19 @@ protected void service(HttpServletRequest request, HttpServletResponse response)
 					out.print("<td>NULL</td>");
 					out.println("</tr>");
         		}
+                int cnt=0;
         		while(rs.next()){
         		out.println("<tr>");
-            		out.print("<td>"+(Integer.parseInt(rs.getString("OrderNo"))+100)+"</td>");
-            		out.print("<td>"+rs.getString("tshritAccessories")+"</td>");
-            		out.print("<td>"+rs.getString("tshritTagLine")+"</td>");
+            		out.print("<td>"+ 100+cnt +"</td>");
+            		out.print("<td>"+rs.getString("tshirtAccessories")+"</td>");
+            		out.print("<td>"+rs.getString("tshirtTagLine")+"</td>");
             		out.print("<td>"+rs.getString("tcolor")+"</td>");
-            		out.print("<td>"+rs.getString("tshritOption")+"</td>");
+            		out.print("<td>"+rs.getString("tshirtOption")+"</td>");
             		out.println("</tr>");
+                    cnt++;
         		}
         		out.println("</table>");
-        		out.println("<a href=\"tshrit.jsp\">click here</a>");
+        		out.println("<a href=\"tshirt.jsp\">click here</a>");
         		out.println("</body></html>");
             }
 		}
