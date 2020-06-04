@@ -5,7 +5,7 @@ class RunQuery {
     RunQuery(){
         try{
             Class.forName("com.mysql.jdbc.Driver"); 
-            this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "");
+            this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "nikmisha13594");
         }
         catch(Exception e){
             e.printStackTrace();
@@ -29,7 +29,7 @@ class RunQuery {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery("select * from info;");
             while (rs.next())
-                ans+=rs.getString("id")+" "+rs.getString("name")+" "+rs.getString("age")+" "+rs.getString("doa")+" "+rs.getString("coa")+" "+rs.getString("diag")+" "+rs.getString("treat")+"\n";
+                ans+=rs.getString("id")+" "+rs.getString("name")+" "+rs.getString("age")+" "+rs.getString("doa")+" "+rs.getString("coa")+" "+rs.getString("doc")+" "+rs.getString("diag")+" "+rs.getString("treat")+"\n";
           return ans;
           }
         }
