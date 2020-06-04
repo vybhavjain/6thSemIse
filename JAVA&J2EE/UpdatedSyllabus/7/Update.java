@@ -17,7 +17,7 @@ public class Update extends HttpServlet {
         super();
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        new RunQuery().update("update info set name = '" + request.getParameter("name") + "', age = " + request.getParameter("age") + ",doa = '" + request.getParameter("doa") + "',coa = '"+ request.getParameter("coa") + "',diag = '" + request.getParameter("diag") + "',treat = '" + request.getParameter("treat") + "' where id = " + request.getParameter("id") + ";");
+        new RunQuery().update("update info set name = '" + request.getParameter("name") + "', age = " + request.getParameter("age") + ",doa = '" + request.getParameter("doa") + "',coa = '"+ request.getParameter("coa") + "',doc = '" + request.getParameter("doc") + "',diag = '" + request.getParameter("diag") + "',treat = '" + request.getParameter("treat") + "' where id = " + request.getParameter("id") + ";");
         response.getWriter().println("Successfully Updated!"); 
     }
 }
