@@ -20,7 +20,7 @@ public class telephone extends HttpServlet {
         super();
          try{
                 Class.forName("com.mysql.jdbc.Driver"); 
-                this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/OnlineDirectory", "root", "nikmisha13594");
+                this.conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/OnlineDirectory", "root", "");
             }
         catch(Exception e){
             e.printStackTrace();
