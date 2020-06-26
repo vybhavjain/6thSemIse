@@ -1,0 +1,11 @@
+sudo service mysql start
+
+sudo mysql -u root -p
+
+create database flight
+
+use flight
+
+create table Flight(Flight_Number varchar(50),Airline_Name varchar(50),Weekdays varchar(50));
+
+create table SeatReservation(Flight_Number varchar(50),Date varchar(50),Seat_Number int,Customer_Name varchar(50),Customer_Phone int);

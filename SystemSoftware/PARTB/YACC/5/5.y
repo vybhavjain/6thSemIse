@@ -6,18 +6,18 @@
 %token num nl
 
 %%
-stmt:num nl {printf("valid \n");exit(0);};
+stmt:num nl {printf("\nValid");exit(0);};
 %%
 
 int yyerror(char *msg)
 {
-printf("invalid");
+printf("\nInvalid");
 exit(0);
 }
 
 main()
 {
-printf("enter expression");
+printf("Enter expression: ");
 yyparse();
 }
 
